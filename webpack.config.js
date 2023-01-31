@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
       new HtmlWebpackPlugin({
 		inject:'head' ,
-        title: meta.name,
+		  title: meta.title,
 		library: meta.name,
   		template: './src/index.html',
   		anchor: meta.name+"_container",

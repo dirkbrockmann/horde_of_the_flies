@@ -1,10 +1,11 @@
 {
-  "name": "explorable_template",
+  "name": "vicsek_model",
+  "title": "The Vicsek Model",
   "version": "1.0.0",
-  "description": "This is a template for making a complexity explorable. The template can be used to create a new complexity explorable. This template implements the Vicsek Model.",
+  "description": "This explorable illustrates the properties of the Vicsek Model, a simple model for the dynamics of collective behavior and swarming in animal populations.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dirkbrockmann/explorable_template.git"
+    "url": "git+https://github.com/dirkbrockmann/vicsek-model.git"
   },
   "author": "Dirk Brockmann (https://rocs.hu-berlin.de)",
   "main": "./dist/index.js",
@@ -15,7 +16,7 @@
     "dev": "webpack serve --static dist/ --mode development",
     "show": "http-server dist -o"
   },
-  "keywords": ["complexity","explorables","visualization"],
+  "keywords": ["complexity","explorables","visualization","swarming","collective behavior","vicsek model"],
   "license": "ISC",
   "dependencies": {
     "css-loader": "^6.7.3",
