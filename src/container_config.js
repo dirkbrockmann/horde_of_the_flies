@@ -1,7 +1,7 @@
 export default {
-	display_type:"svg",
+	display_type:"canvas",
 	debug:false, 
-	controls_border:true,
+	controls_border:false,
 	display_border:true,
 	debug_lattice:"debug-grid-16",
 	controls_grid:{nx:12,ny:12},

@@ -1,7 +1,7 @@
 export default {
 		dt:1,
 		L:100,
-		agentsize: 1.0,
+		agentsize: 2,
 	
 		speed: {
 			range:[0,1],
@@ -16,11 +16,11 @@ export default {
 			default : 3
 		},
 		number_of_particles : {
-			choices:[50,100,200,400],
+			choices:[100,200,500,1000],
 		default:2
 		},
 		color_by_heading: {
-			default: true
+		default: false
 		}
 }
 

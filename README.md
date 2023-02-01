@@ -1,4 +1,4 @@
-# The Vicsek Model
+# The Vicsek Model (Canvas)
 
 ## Installation
 

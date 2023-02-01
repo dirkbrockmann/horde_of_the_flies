@@ -1,7 +1,7 @@
 
 import param from "./parameters.js"
 import {each,range,map,mean} from "lodash-es"
-import {rad2deg,deg2rad} from "./utils"
+import {rad2deg,deg2rad,torusdist} from "./utils"
 
 const L = param.L;
 const dt = param.dt;
@@ -21,7 +21,7 @@ const initialize = () => {
 				index:i, 
 				x:L*Math.random(), 
 				y:L*Math.random(),
-				theta: 2*Math.PI*Math.random(),
+				theta: 360*Math.random(),
 			} 
 	});
 	
@@ -33,8 +33,8 @@ const go  = () => {
 	
 	each(agents,a=>{
 		
-		var dx = dt*param.speed.widget.value()*Math.cos(a.theta);
-		var dy = dt*param.speed.widget.value()*Math.sin(a.theta);
+		var dx = dt*param.speed.widget.value()*Math.cos(deg2rad(a.theta));
+		var dy = dt*param.speed.widget.value()*Math.sin(deg2rad(a.theta));
 		
 		const x_new = a.x + dx;
 		const y_new = a.y + dy;
@@ -47,22 +47,21 @@ const go  = () => {
 		a.x += dx;
 		a.y += dy;
 		
-		var neighbors = agents.filter(d =>  (d.x-a.x)**2 + (d.y-a.y)**2 <= param.interaction_radius.widget.value()**2 )
+		var neighbors = agents.filter(d =>  torusdist(a,d,L) <= param.interaction_radius.widget.value() )
 		
 		var mx = mean(map(neighbors,x=> Math.cos(deg2rad(x.theta))));
 		var my = mean(map(neighbors,x=> Math.sin(deg2rad(x.theta))));	
 		
-		a.theta = rad2deg(Math.atan2(my,mx))
+		a.theta_neighbors = rad2deg(Math.atan2(my,mx))
+		a.theta = a.theta_neighbors;
 		
-		a.theta += deg2rad(param.wiggle.widget.value())*(Math.random()-0.5)
+		a.theta += param.wiggle.widget.value()*(Math.random()-0.5)
 		
 	})
 	
 }
 
 const update = () => {
-	
-	each(agents,x => {x.active = x.index < param.number_of_particles.widget.value() ? true : false})
 
 }
 

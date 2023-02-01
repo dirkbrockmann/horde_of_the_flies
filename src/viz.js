@@ -6,6 +6,11 @@ const L = param.L;
 const X = d3.scaleLinear().domain([0,L]);
 const Y = d3.scaleLinear().domain([0,L]);
 
+var W, H, ctx, cfg;
+var ctx;
+
+
+
 
 const update = (display) => {
 	
@@ -15,33 +20,45 @@ const update = (display) => {
 }
 
 const initialize = (display,config) => {
-
-	const W = config.display_size.width;
-	const H = config.display_size.height;
+	
+	cfg = config;
+	W = cfg.display_size.width;
+	H = cfg.display_size.height;
 	
 	X.range([0,W]);
 	Y.range([0,H]);
+	
+	ctx = display.node().getContext('2d');
 		
-	display.selectAll("#origin").remove();
-	display.selectAll(".node").remove();
+	// clear canvas
 	
-	const origin = display.append("g").attr("id","origin")
-	
-	origin.selectAll(".node").data(agents).enter().append("circle")
-		.attr("class","node")
-		.attr("cx",d=>X(d.x))
-		.attr("cy",d=>Y(d.y))
-		.attr("r",X(param.agentsize/2))
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
+	ctx.clearRect(0, 0, W, H);
+	ctx.strokeStyle = "black";
+	ctx.strokeRect(0, 0, cfg.display_size.width, cfg.display_size.height);		
+
+	agents.forEach(a=>{
+		 ctx.beginPath();
+ 		ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
+ 		ctx.fillStyle = 'black';
+ 		ctx.fill();
+	})
 	
 };
 
 const go = (display) => {
-	
-	display.selectAll(".node")
-		.attr("cx",d=>X(d.x))
-		.attr("cy",d=>Y(d.y))
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
+
+	ctx.clearRect(0, 0, W, H);
+	ctx.strokeStyle = "black";
+	ctx.strokeRect(0, 0, cfg.display_size.width, cfg.display_size.height);
+
+	agents.forEach(a=>{
+
+		 ctx.beginPath();
+		 ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
+		 ctx.fillStyle = param.color_by_heading.widget.value() ? d3.interpolateSinebow(a.theta_neighbors/360)  : "black";
+		 ctx.fill();
+		 ctx.closePath();
+	})
 	
 }
 
