@@ -1,5 +1,5 @@
 {
-  "name": "vicsek_model",
+  "name": "@explorables/vicsek_model",
   "title": "The Vicsek Model",
   "version": "1.0.0",
   "description": "This explorable illustrates the properties of the Vicsek Model, a simple model for the dynamics of collective behavior and swarming in animal populations.",
@@ -16,7 +16,14 @@
     "dev": "webpack serve --static dist/ --mode development",
     "show": "http-server dist -o"
   },
-  "keywords": ["complexity","explorables","visualization","swarming","collective behavior","vicsek model"],
+  "keywords": [
+    "complexity",
+    "explorables",
+    "visualization",
+    "swarming",
+    "collective behavior",
+    "vicsek model"
+  ],
   "license": "ISC",
   "dependencies": {
     "css-loader": "^6.7.3",
@@ -33,5 +40,9 @@
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/dirkbrockmann/vicsek-model/issues"
+  },
+  "homepage": "https://github.com/dirkbrockmann/vicsek-model#readme"
 }

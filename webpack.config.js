@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+const name = meta.name.substring(meta.name.lastIndexOf('/') + 1)
+
 module.exports = {
   entry: {
 	  index: './src/index.js',
@@ -13,9 +15,9 @@ module.exports = {
       new HtmlWebpackPlugin({
 		inject:'head' ,
 		  title: meta.title,
-		library: meta.name,
+		library: name,
   		template: './src/index.html',
-  		anchor: meta.name+"_container",
+  		anchor: name+"_container",
     	  description: meta.description,
 		scriptLoading: 'blocking'
       }),
@@ -24,7 +26,7 @@ module.exports = {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
-  	  library: meta.name,
+  	  library: name,
       clean: true 
     }, 
   module: {
