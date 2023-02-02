@@ -1,7 +1,7 @@
 {
   "name": "@explorables/vicsek_model",
   "title": "The Vicsek Model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This explorable illustrates the properties of the Vicsek Model, a simple model for the dynamics of collective behavior and swarming in animal populations.",
   "repository": {
     "type": "git",
