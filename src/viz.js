@@ -10,15 +10,6 @@ var W, H, ctx, cfg;
 var ctx;
 
 
-
-
-const update = (display) => {
-	
-	display.selectAll(".node")
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
-	
-}
-
 const initialize = (display,config) => {
 	
 	cfg = config;
@@ -39,7 +30,7 @@ const initialize = (display,config) => {
 	agents.forEach(a=>{
 		 ctx.beginPath();
  		ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
- 		ctx.fillStyle = 'black';
+ 		ctx.fillStyle = param.color_by_heading.widget.value() ? d3.interpolateSinebow(a.theta_neighbors/360)  : "black";
  		ctx.fill();
 	})
 	
@@ -63,4 +54,4 @@ const go = (display) => {
 }
 
 
-export {initialize,go,update}
+export {initialize,go,go as update}

@@ -25,6 +25,15 @@ const initialize = () => {
 			} 
 	});
 	
+	each(agents,a=>{
+		var neighbors = agents.filter(d =>  torusdist(a,d,L) <= param.interaction_radius.widget.value() )
+		
+		var mx = mean(map(neighbors,x=> Math.cos(deg2rad(x.theta))));
+		var my = mean(map(neighbors,x=> Math.sin(deg2rad(x.theta))));	
+		
+		a.theta_neighbors = rad2deg(Math.atan2(my,mx))
+	})
+	
 };
 
 const go  = () => {
@@ -53,6 +62,7 @@ const go  = () => {
 		var my = mean(map(neighbors,x=> Math.sin(deg2rad(x.theta))));	
 		
 		a.theta_neighbors = rad2deg(Math.atan2(my,mx))
+		
 		a.theta = a.theta_neighbors;
 		
 		a.theta += param.wiggle.widget.value()*(Math.random()-0.5)
