@@ -19,6 +19,6 @@ export default (display,controls,config) => {
 	ct.go.update(()=>startstop(display))
 	ct.setup.update(()=>initialize(display,config))
 	param.number_of_particles.widget.update(()=>initialize(display,config))
-	
+	param.color_by_heading.widget.update(()=>update(display))
 }
 
