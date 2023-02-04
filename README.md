@@ -1,9 +1,9 @@
-# Spin Wheels
+# Horde of the Flies
 
-This explorable illustrates some interesting and beautiful properties of oscillators that are spatially arranged on a lattice and interact with their neighbors by phase coupling. It's the [Kuramoto Model](https://en.wikipedia.org/wiki/Kuramoto_model) on a square lattice.
+This explorable illustrates one of the most fundamental and simple models for swarming and collective behavior in animal populations: The [Vicsek-Model](https://en.wikipedia.org/wiki/Vicsek_model). Individuals move around at constant speed and align their heading according to the mean heading of others in the vicinity.
 
 The explorable is part of the [**Complexity Exporables Collection**](https://www.complexity-explorables.org). For more information about the system and its behavior consult the explorable
-> [**"Spin Wheels" - Phase-coupled oscillators on a lattice**](https://www.complexity-explorables.org/explorables/spin-wheels/)
+> [**"Horde of the Flies" - Phase-coupled oscillators on a lattice**](https://www.complexity-explorables.org/explorables/horde-of-the-flies/)
 
 ## Installation & Use
 
