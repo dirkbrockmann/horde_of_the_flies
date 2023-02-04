@@ -1,7 +1,7 @@
 export default {
 		dt:1,
 		L:100,
-		agentsize: 2,
+		agentsize: 2.5,
 	
 		speed: {
 			range:[0,1],

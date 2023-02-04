@@ -1,10 +1,14 @@
 import * as d3 from "d3"
 import param from "./parameters.js"
 import {agents} from "./model.js"
+import colors from "./colormaps.js"
+import syscfg from "./config.js"
 
 const L = param.L;
 const X = d3.scaleLinear().domain([0,L]);
 const Y = d3.scaleLinear().domain([0,L]);
+
+const paint = colors[syscfg.simulation.colormap];
 
 var W, H, ctx, cfg;
 var ctx;
@@ -30,7 +34,7 @@ const initialize = (display,config) => {
 	agents.forEach(a=>{
 		 ctx.beginPath();
  		ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
- 		ctx.fillStyle = param.color_by_heading.widget.value() ? d3.interpolateSinebow(a.theta_neighbors/360)  : "black";
+ 		ctx.fillStyle = param.color_by_heading.widget.value() ? paint(a.theta_neighbors/360)  : "black";
  		ctx.fill();
 	})
 	
@@ -46,7 +50,7 @@ const go = (display) => {
 
 		 ctx.beginPath();
 		 ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
-		 ctx.fillStyle = param.color_by_heading.widget.value() ? d3.interpolateSinebow(a.theta_neighbors/360)  : "black";
+		 ctx.fillStyle = param.color_by_heading.widget.value() ? paint(a.theta_neighbors/360)  : "black";
 		 ctx.fill();
 		 ctx.closePath();
 	})

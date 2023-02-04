@@ -1,6 +1,6 @@
 
 import param from "./parameters.js"
-import {each,range,map,mean} from "lodash-es"
+import {each,range,map,mean,maxBy,minBy} from "lodash-es"
 import {rad2deg,deg2rad,torusdist} from "./utils"
 
 const L = param.L;
@@ -67,6 +67,8 @@ const go  = () => {
 		
 		a.theta += param.wiggle.widget.value()*(Math.random()-0.5)
 		
+		a.theta += 360;
+		a.theta = a.theta % 360;
 	})
 	
 }
