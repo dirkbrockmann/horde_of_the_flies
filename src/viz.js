@@ -3,6 +3,7 @@ import param from "./parameters.js"
 import {agents} from "./model.js"
 import colors from "./colormaps.js"
 import syscfg from "./config.js"
+import {each} from "lodash-es"
 
 const L = param.L;
 const X = d3.scaleLinear().domain([0,L]);
@@ -15,18 +16,21 @@ var ctx;
 
 var line = d3.line().x(d=>param.agentsize*d.x).y(d=>param.agentsize*d.y);	
 
-function tadpole () {
-	var M = 30;
-	var drop = d3.range(M).map(function(d,i){
+const M = 30;
+var drop = d3.range(M).map(function(d,i){
 			return { 
-				x: -2 * Math.cos(i/M*Math.PI*2), 
-				y: Math.sin(i/M*Math.PI*2) * Math.pow( Math.sin(i/M/2*Math.PI*2) , 6 )
+				x: -2 * Math.cos(i/M*Math.PI*2)*param.agentsize, 
+				y: Math.sin(i/M*Math.PI*2) * Math.pow( Math.sin(i/M/2*Math.PI*2) , 6 ) * param.agentsize
 			};
 		})
-	return line(drop);
-}	
 
-console.log(tadpole())
+console.log(drop)
+
+function draw_tadpole(context,x,y){
+	context.moveTo(x,y);
+	each(drop,p=>ctx.lineTo(x+p.x,y+p.y))
+}
+
 
 const initialize = (display,config) => {
 	
@@ -47,11 +51,8 @@ const initialize = (display,config) => {
 
 	agents.forEach(a=>{
 		//ctx.save()
-		 ctx.beginPath();
-		 ctx.moveTo(0,0)
-		 ctx.lineTo(X(10),Y(0))
- 		ctx.rotate(a.theta * Math.PI / 180);
-		ctx.translate(X(a.x),Y(a.y))
+		 
+		draw_tadpole(ctx,X(a.x),Y(a.y))
 		//ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
 		
 		ctx.stroke();
