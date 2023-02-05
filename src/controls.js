@@ -18,13 +18,17 @@ const sliders = map(va,
 					.range(v.range)
 					.value(v.default)
 					.size(cfg.widgets.slider_size)
+					.girth(cfg.widgets.slider_girth)
+                    .knob(cfg.widgets.slider_knob)
+                    .fontsize(cfg.widgets.fontsize)
 		);
 
 const toggles = map(bo, 
 		v => widgets.toggle()
 					.id(v.id).
 					label(v.label).
-					value(v.default)					
+					value(v.default)
+	.fontsize(cfg.widgets.fontsize)					
 		);
 
 const radios = map(ch, 
@@ -34,6 +38,7 @@ const radios = map(ch,
 					.value(v.default)
 					.orientation(cfg.widgets.radio_orientation)
 					.labelposition(cfg.widgets.radio_label_position)
+	.fontsize(cfg.widgets.fontsize)
 		);
 
 
