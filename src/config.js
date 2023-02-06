@@ -21,6 +21,6 @@ export default {
 	},
 	simulation: {
 		delay:0,
-		colormap:"vik"
+		colormap:"sinebow"
 	}
 }
