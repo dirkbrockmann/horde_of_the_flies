@@ -1,9 +1,15 @@
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+
 # Horde of the Flies
+
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
 This explorable illustrates one of the most fundamental and simple models for swarming and collective behavior in animal populations: The [Vicsek-Model](https://en.wikipedia.org/wiki/Vicsek_model). Individuals move around at constant speed and align their heading according to the mean heading of others in the vicinity.
 
 The explorable is part of the [**Complexity Exporables Collection**](https://www.complexity-explorables.org). For more information about the system and its behavior consult the explorable
-> [**"Horde of the Flies" - Phase-coupled oscillators on a lattice**](https://www.complexity-explorables.org/explorables/horde-of-the-flies/)
+> [**"Horde of the Flies" - The Vicsek-Model**](https://www.complexity-explorables.org/explorables/horde-of-the-flies/)
 
 ## Installation & Use
 
@@ -43,5 +49,12 @@ Go to the directory, install, build and show using `npm`:
 3. `npm run build`
 4. `npm run show`
 
+--- 
 
+## License
+
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
 
