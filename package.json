@@ -1,7 +1,7 @@
 {
   "name": "@explorables/horde_of_the_flies",
   "title": "Horde of the Flies",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "CC-BY-4.0",
   "description": "This explorable illustrates the properties of the Vicsek Model, a simple model for the dynamics of collective behavior and swarming in animal populations.",
   "repository": {
