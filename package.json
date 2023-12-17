@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "css-loader": "^6.7.3",
-    "d3-widgets": "^1.0.18",
+    "d3-widgets": "^1.0.25",
     "lodash-es": "^4.17.21",
     "tachyons": "^4.12.0"
   },
