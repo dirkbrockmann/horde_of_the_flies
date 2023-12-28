@@ -28,8 +28,8 @@ const initialize = (display,config) => {
 	// clear canvas
 	
 	ctx.clearRect(0, 0, W, H);
-	ctx.strokeStyle = "black";
-	ctx.strokeRect(0, 0, cfg.display_size.width, cfg.display_size.height);		
+//	ctx.strokeStyle = "black";
+//	ctx.strokeRect(0, 0, cfg.display_size.width, cfg.display_size.height);		
 
 	agents.forEach(a=>{
 		 ctx.beginPath();
@@ -43,8 +43,8 @@ const initialize = (display,config) => {
 const go = (display) => {
 
 	ctx.clearRect(0, 0, W, H);
-	ctx.strokeStyle = "black";
-	ctx.strokeRect(0, 0, cfg.display_size.width, cfg.display_size.height);
+//	ctx.strokeStyle = "black";
+//	ctx.strokeRect(0, 0, cfg.display_size.width, cfg.display_size.height);
 
 	agents.forEach(a=>{
 
