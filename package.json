@@ -1,9 +1,10 @@
 {
   "name": "@explorables/horde_of_the_flies",
   "title": "Horde of the Flies",
-  "version": "1.0.12",
+  "subtitle": "The Vicsek-Model",
+  "version": "1.1.0",
   "license": "CC-BY-4.0",
-  "description": "This explorable illustrates the properties of the Vicsek Model, a simple model for the dynamics of collective behavior and swarming in animal populations.",
+  "description": "This explorable illustrates a simple and beautiful model for swarms, flocks and collective motion in animal populations.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dirkbrockmann/horde_of_the_flies.git"
@@ -26,19 +27,19 @@
     "vicsek model"
   ],
   "dependencies": {
-    "css-loader": "^6.7.3",
-    "d3-widgets": "^1.0.25",
+    "css-loader": "^6.8.1",
+    "d3-widgets": "^1.2.3",
     "lodash-es": "^4.17.21",
     "tachyons": "^4.12.0"
   },
   "devDependencies": {
-    "css-loader": "^6.7.3",
-    "html-webpack-plugin": "^5.5.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.6.0",
     "http-server": "^14.1.1",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.75.0",
-    "webpack-bundle-analyzer": "^4.7.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   }
 }
