@@ -1,5 +1,5 @@
 export default {
-	id:"horde_of_flies",
+	id:"horde_of_the_flies",
 	display_type:"canvas",
 	debug:false, 
 	controls_border:"",
