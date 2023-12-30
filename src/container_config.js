@@ -2,7 +2,7 @@ export default {
 	id:"horde_of_the_flies",
 	display_type:"canvas",
 	debug:false, 
-	controls_border:"1px solid black",
+	controls_border:"",
 	display_border:"1px solid black",
 	debug_lattice:"debug-grid-16",
 	controls_grid:{nx:12,ny:12},
