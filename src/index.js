@@ -8,7 +8,6 @@ import {initialize as setup_simulation} from "./simulation.js"
 import {go} from "./controls.js"
 import meta from "./meta.js"
 
-
 var display,controls,grid;
 
 const load = function (container_id,config=cfg) {
@@ -21,12 +20,8 @@ const load = function (container_id,config=cfg) {
 	controls = container.controls;
 	grid = container.grid;
 		
-
-	
 	setup_controls(controls,grid); 
-	
 	setup_interactions(display,controls,config); 
-	
 	setup_simulation(display,config)
 	
 }
