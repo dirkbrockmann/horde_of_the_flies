@@ -4,6 +4,7 @@ import {agents} from "./model.js"
 import colors from "./colormaps.js"
 import syscfg from "./config.js"
 
+
 const L = param.L;
 const X = d3.scaleLinear().domain([0,L]);
 const Y = d3.scaleLinear().domain([0,L]);
@@ -12,6 +13,7 @@ const paint = colors[syscfg.simulation.colormap];
 
 var W, H, ctx, cfg;
 var ctx;
+const dotcolor = "#888";
 
 
 const initialize = (display,config) => {
@@ -22,7 +24,7 @@ const initialize = (display,config) => {
 	
 	X.range([0,W]);
 	Y.range([0,H]);
-	
+
 	ctx = display.node().getContext('2d');
 	
 	ctx.clearRect(0, 0, W, H);
@@ -30,7 +32,7 @@ const initialize = (display,config) => {
 	agents.forEach(a=>{
 		 ctx.beginPath();
  		ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
- 		ctx.fillStyle = param.color_by_heading.widget.value() ? paint(a.theta_neighbors/360)  : "black";
+ 		ctx.fillStyle = param.color_by_heading.widget.value() ? paint(a.theta_neighbors/360)  : dotcolor;
  		ctx.fill();
 	})
 	
@@ -39,12 +41,12 @@ const initialize = (display,config) => {
 const go = (display) => {
 
 	ctx.clearRect(0, 0, W, H);
-
+	
 	agents.forEach(a=>{
 
 		 ctx.beginPath();
 		 ctx.arc(X(a.x), Y(a.y), param.agentsize, 0, 2 * Math.PI, false);
-		 ctx.fillStyle = param.color_by_heading.widget.value() ? paint(a.theta_neighbors/360)  : "black";
+		 ctx.fillStyle = param.color_by_heading.widget.value() ? paint(a.theta_neighbors/360)  : dotcolor;
 		 ctx.fill();
 		 ctx.closePath();
 	})

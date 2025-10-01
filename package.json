@@ -10,11 +10,29 @@
     "type": "git",
     "url": "git+https://github.com/dirkbrockmann/horde_of_the_flies.git"
   },
+  "type": "module",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
+  "browser": "./dist/index.umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "default": "./dist/index.umd.js"
+    }
+  },
+  "unpkg": "dist/index.umd.js",
+  "jsdelivr": "dist/index.umd.js",
   "files": [
-    "dist/"
+    "dist/",
+    "README.md",
+    "LICENSE"
   ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -28,7 +46,7 @@
   ],
   "dependencies": {
     "d3": "^7.8.5",
-    "d3-widgets": "^1.2.3",
+    "d3-widgets": "^2.0.3",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {

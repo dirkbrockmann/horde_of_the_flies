@@ -8,7 +8,7 @@
 
 This explorable illustrates a simple and beautiful model for swarms, flocks and collective motion in animal populations.
 
-The explorable is part of the [**Complexity Exporables Collection**](https://www.complexity-explorables.org). For more information about the system and its behavior consult the explorable
+The explorable is part of the [**Complexity Explorables Collection**](https://www.complexity-explorables.org). For more information about the system and its behavior consult the explorable
 > [**“Horde of the Flies” - The Vicsek-Model**](https://www.complexity-explorables.org/explorables/horde-of-the-flies)
 
 ## Usage & Installation
@@ -24,8 +24,11 @@ If you want to run a local copy without having to rely on the nasty internet, th
 is to install it via `npm`:
 
 ```shell
+mkdir horde_of_the_flies
+cd horde_of_the_flies
+npm init -y
 npm install @explorables/horde_of_the_flies
-open node_modules/@explorables/horde_of_the_flies/dist/index.html 
+npx http-server node_modules/@explorables/horde_of_the_flies/dist/ 
 ```
 
 ### Embedding the explorable in your site
