@@ -2,7 +2,7 @@ export default {
 	display_type:"canvas",
 	debug:false, 
 	controls_border:"",
-	display_border:"1px solid black",
+	display_border:"",
 	debug_lattice:"debug-grid-16",
 	controls_grid:{nx:12,ny:12},
 	display_size: {width:500,height:500},
